@@ -167,6 +167,7 @@ def nodeComparison(json1, json2):
     sim_position = comparePosition(json1, json2)
     print("Position Similarity: ", sim_position)
     sim = w_shape * sim_shape + w_size * sim_size + w_position * sim_position
+    sim = 1 - sim
     return sim
 
 if __name__ == '__main__':
