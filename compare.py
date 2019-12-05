@@ -156,6 +156,8 @@ def comparePosition(json1, json2):
 
 
 def nodeComparison(json1, json2):
+    if json1["command"] not in ["DrawPath", "DrawRRect", "DrawImageRect", "DrawTextBlob", "DrawRect"] or json2["command"] not in ["DrawPath", "DrawRRect", "DrawImageRect", "DrawTextBlob", "DrawRect"]:
+        return 1
     w_shape = 0.6
     w_size = 0.2
     w_position = 0.2
