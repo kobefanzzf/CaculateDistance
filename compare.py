@@ -121,6 +121,7 @@ def comparePosition(json1, json2):
             y = y + points1[i][1]
         path_x = x/(len(points1)-1)
         path_y = y/(len(points1)-1)
+        #print("path_x: ", path_x, "path_y: ", path_y)
         nonpath_x = 0
         nonpath_y = 0
         if nonPath["command"] == "DrawRRect":
@@ -130,7 +131,9 @@ def comparePosition(json1, json2):
             nonpath_pos = nonPath["shortDesc"].strip(' []').split(" ")
             nonpath_x = (float(nonpath_pos[0]) + float(nonpath_pos[2]))/2
             nonpath_y = (float(nonpath_pos[1]) + float(nonpath_pos[3]))/2
-        sim = 1 - sqrt((path_x - nonpath_x)*(path_x - nonpath_x)+(path_y - nonpath_y)*(path_y - nonpath_y))/sqrt(path_x*path_x + path_y*path_y)
+        #print("nonpath_x: ", nonpath_x, "nonpath_y: ", nonpath_y)
+        sim = 1 - sqrt((path_x - nonpath_x)*(path_x - nonpath_x)+(path_y - nonpath_y)*(path_y - nonpath_y))/(sqrt(path_x*path_x + path_y*path_y)+sqrt(nonpath_x*nonpath_x + nonpath_y*nonpath_y))
+        #print(sim)
         return sim
     else:
         if shape[0] == "DrawRRect" and shape[1] == "DrawRRect":
@@ -138,7 +141,7 @@ def comparePosition(json1, json2):
             RRect_y = (json1["coords"][0][1] + json1["coords"][0][3])/2
             nonRRect_x = (json2["coords"][0][0] + json2["coords"][0][2])/2
             nonRRect_y = (json2["coords"][0][1] + json2["coords"][0][3])/2
-            sim = 1 - sqrt((RRect_x - nonRRect_x)*(RRect_x - nonRRect_x)+(RRect_y - nonRRect_y)*(RRect_y - nonRRect_y))/sqrt(RRect_x*RRect_x + RRect_y*RRect_y)
+            sim = 1 - sqrt((RRect_x - nonRRect_x)*(RRect_x - nonRRect_x)+(RRect_y - nonRRect_y)*(RRect_y - nonRRect_y))/(sqrt(RRect_x*RRect_x + RRect_y*RRect_y)+sqrt(nonRRect_y*nonRRect_y + nonRRect_x*nonRRect_x))
             return sim
 
         elif shape[0] == "DrawRRect" or shape[1] == "DrawRRect":
@@ -149,7 +152,7 @@ def comparePosition(json1, json2):
             nonRRect_pos = nonRRect["shortDesc"].strip(' []').split(" ")
             nonRRect_x = (float(nonRRect_pos[0]) + float(nonRRect_pos[2]))/2
             nonRRect_y = (float(nonRRect_pos[1]) + float(nonRRect_pos[3]))/2
-            sim = 1 - sqrt((RRect_x - nonRRect_x)*(RRect_x - nonRRect_x)+(RRect_y - nonRRect_y)*(RRect_y - nonRRect_y))/sqrt(RRect_x*RRect_x + RRect_y*RRect_y)
+            sim = 1 - sqrt((RRect_x - nonRRect_x)*(RRect_x - nonRRect_x)+(RRect_y - nonRRect_y)*(RRect_y - nonRRect_y))/(sqrt(RRect_x*RRect_x + RRect_y*RRect_y)+sqrt(nonRRect_x*nonRRect_x + nonRRect_y*nonRRect_y))
             return sim
         else:
             json1_pos = json1["shortDesc"].strip(' []').split(" ")
@@ -158,7 +161,7 @@ def comparePosition(json1, json2):
             json1_y = (float(json1_pos[1])+ float(json1_pos[3]))/2
             json2_x = (float(json2_pos[0]) + float(json2_pos[2]))/2
             json2_y = (float(json2_pos[1]) + float(json2_pos[3]))/2
-            sim = 1 - sqrt((json1_x - json2_x)*(json1_x - json2_x)+(json1_y - json2_y)*(json1_y - json2_y))/sqrt(json1_x*json1_x + json1_y*json1_y)
+            sim = 1 - sqrt((json1_x - json2_x)*(json1_x - json2_x)+(json1_y - json2_y)*(json1_y - json2_y))/(sqrt(json1_x*json1_x + json1_y*json1_y)+sqrt(json2_x*json2_x + json2_y*json2_y))
             return sim
 
 

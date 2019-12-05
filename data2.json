@@ -1,1 +1,1 @@
-{"command": "DrawRRect", "visible": true, "coords": [[584, 285, 704, 321], [2, 2], [2, 2], [2, 2], [2, 2]], "paint": {"antiAlias": true, "color": [255, 6, 95, 212], "filterQuality": "low"}}
+{"command": "DrawRect", "visible": true, "coords": [0, 0, 785, 4455], "paint": {"antiAlias": true, "color": [255, 249, 249, 249], "blendMode": "src", "filterQuality": "low"}, "shortDesc": " [0 0 785 4455]"}
