@@ -39,7 +39,7 @@ def getPathLen(json1):
         elif "line" in json1["path"]["verbs"][i]:
             points.append(json1["path"]["verbs"][i]["line"])
         else:
-            continue;
+            continue
     for i in range(len(points) - 1):
         dx = points[i][0] - points[i+1][0]
         dy = points[i][1] - points[i+1][1]
@@ -54,7 +54,7 @@ def getPathPosition(json1):
         elif "line" in json1["path"]["verbs"][i]:
             points.append(json1["path"]["verbs"][i]["line"])
         else:
-            continue;
+            continue
     return points
 
 
@@ -84,8 +84,7 @@ def compareSize(json1, json2):
             noRRect = json2 if json1["command"] == "DrawRRect" else json1
             size1 = abs(RRect["coords"][0][0] - RRect["coords"][0][2]) * abs(RRect["coords"][0][1] - RRect["coords"][0][3]) + abs(RRect["coords"][1][0]*2*RRect["coords"][1][0]*2 - pi*RRect["coords"][1][0]*RRect["coords"][1][0])
             position2 = noRRect["shortDesc"].strip(' []').split(" ")
-            print(noRRect)
-            size2 = abs(float(noRRect[0]) - float(noRRect[2]))*abs(float(noRRect[1]) - float(noRRect[3]))
+            size2 = abs(float(position2[0]) - float(position2[2]))*abs(float(position2[1]) - float(position2[3]))
             return min(size1,size2)/max(size1,size2)
         else:
             position1 = json1["shortDesc"].strip(' []').split(" ")
@@ -134,7 +133,15 @@ def comparePosition(json1, json2):
         sim = 1 - sqrt((path_x - nonpath_x)*(path_x - nonpath_x)+(path_y - nonpath_y)*(path_y - nonpath_y))/sqrt(path_x*path_x + path_y*path_y)
         return sim
     else:
-        if shape[0] == "DrawRRect" or shape[1] == "DrawRRect":
+        if shape[0] == "DrawRRect" and shape[1] == "DrawRRect":
+            RRect_x = (json1["coords"][0][0] + json1["coords"][0][2])/2
+            RRect_y = (json1["coords"][0][1] + json1["coords"][0][3])/2
+            nonRRect_x = (json2["coords"][0][0] + json2["coords"][0][2])/2
+            nonRRect_y = (json2["coords"][0][1] + json2["coords"][0][3])/2
+            sim = 1 - sqrt((RRect_x - nonRRect_x)*(RRect_x - nonRRect_x)+(RRect_y - nonRRect_y)*(RRect_y - nonRRect_y))/sqrt(RRect_x*RRect_x + RRect_y*RRect_y)
+            return sim
+
+        elif shape[0] == "DrawRRect" or shape[1] == "DrawRRect":
             RRect = json1 if json1["command"] == "DrawRRect" else json2
             nonRRect = json2 if json1["command"] == "DrawRRect" else json1
             RRect_x = (RRect["coords"][0][0] + RRect["coords"][0][2])/2
@@ -157,6 +164,8 @@ def comparePosition(json1, json2):
 
 
 def nodeComparison(json1, json2):
+    if json1["command"] not in ["DrawPath", "DrawRRect", "DrawImageRect", "DrawTextBlob", "DrawRect"] or json2["command"] not in ["DrawPath", "DrawRRect", "DrawImageRect", "DrawTextBlob", "DrawRect"]:
+        return 1
     w_shape = 0.6
     w_size = 0.2
     w_position = 0.2
