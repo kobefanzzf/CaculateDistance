@@ -9,7 +9,11 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "args": [
+                "/Users/zzf/Downloads/skia_data/youtube_com/jsonlayer_0.skp.txt",
+                "/Users/zzf/Downloads/skia_data/youtube_com/jsonlayer_0.skp.txt"
+            ]
         }
     ]
 }

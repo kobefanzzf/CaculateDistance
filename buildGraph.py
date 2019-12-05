@@ -37,7 +37,7 @@ def buildGraph(commmands):
     edges = [[] for _ in range(len(nodes))]
     for i in range(1, len(nodes)):
         minj = -1
-        minArea = 1000000000000
+        minArea = 100000000000000
         if nodes[i]["command"] == "DrawRect":
             shortDesc = nodes[i]["shortDesc"]
             shortDesc = shortDesc[2:-1]
@@ -54,6 +54,8 @@ def buildGraph(commmands):
             coords1 = nodes[i]["coords"][0]
         elif nodes[i]["command"] == "DrawPath":
             edges[0].append(i)
+            continue
+        else:
             continue
 
         for j in range(i):
@@ -73,7 +75,6 @@ def buildGraph(commmands):
                 coords2 = nodes[j]["coords"][0]
             else:
                 continue
-            print(coords1, coords2)
             if isIn(coords1, coords2):
                 area = getArea(coords2)
                 if area < minArea:
@@ -82,16 +83,29 @@ def buildGraph(commmands):
 
         if minj != -1:
             edges[minj].append(i)
+        
 
     return edges, nodes
 
 def generateKernel(cmds1, cmds2):
     kernel = [[0 for _ in range(len(cmds2))]]
-    for obj1 in cmds1:
+    outfile = "example.txt"
+    f = open(outfile, 'w')
+    for obj1 in cmds1[1:]:
         line = [0]
-        for obj2 in cmds2:
-            line.append(nodeComparison(obj1, obj2))
+        for obj2 in cmds2[1:]:
+            val = nodeComparison(obj1, obj2)
+            if val > 1:
+                f.write("value is " + str(val) + " ")
+                f.write("\n")
+                f.write(json.dumps(obj1))
+                f.write('\n')
+                f.write(json.dumps(obj2))
+                f.write('\n')
+                f.write('\n')
+            line.append(val)
         kernel.append(line)
+    f.close()
     return kernel
     
 
@@ -119,17 +133,17 @@ if __name__ == "__main__":
 
     for i in range(len(edges1)):
         for j in range(len(edges1[i])):
-            f.write(str(i) + ' ' + str(edges1[1][j]))
+            f.write(str(i) + ' ' + str(edges1[i][j]))
             f.write('\n')
-
+    f.write('\n')
     f.write(str(len(nodes2)) +  ' ' + str(len(nodes2)-1))
     f.write('\n')
 
     for i in range(len(edges2)):
         for j in range(len(edges2[i])):
-            f.write(str(i) + ' ' + str(edges2[1][j]))
+            f.write(str(i) + ' ' + str(edges2[i][j]))
             f.write('\n')
-
+    f.write('\n')
     for line in kernel:
         f.write(" ".join([str(num) for num in line]))
         f.write('\n')
