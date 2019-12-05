@@ -19,11 +19,10 @@ def isIn(c1, c2):
 
 def buildGraph(commmands):
     nodes = []
-    cnt = 0
     root = {
         "command": "DrawRect",
         "visible": True,
-        "coords": [ 0, 0, 10000, 10000],
+        "coords": [ 0, 0, 10000, 10000 ],
         "paint": {
         "antiAlias": True,
         "color": [ 255, 153, 153, 153 ],
@@ -55,7 +54,6 @@ def buildGraph(commmands):
             coords1 = nodes[i]["coords"][0]
         elif nodes[i]["command"] == "DrawPath":
             edges[0].append(i)
-            cnt += 1
             continue
 
         for j in range(i):
@@ -83,10 +81,9 @@ def buildGraph(commmands):
                     minj = j
 
         if minj != -1:
-            cnt += 1
             edges[minj].append(i)
 
-    return edges, cnt
+    return edges, nodes
 
 def generateKernel(cmds1, cmds2):
     kernel = []
@@ -110,26 +107,26 @@ if __name__ == "__main__":
         exit(0)
     filename1 = sys.argv[1]
     filename2 = sys.argv[2]
-    f1 = open('')
     f1 = open(filename1, 'r')
     f2 = open(filename2, 'r')
     cmds1 = json.loads(f1.read())["commands"]
     cmds2 = json.loads(f2.read())["commands"]
-    edges1, len1 = buildGraph(cmds1)
-    edges2, len2 = buildGraph(cmds2)
-    kernel = generateKernel(cmds1, cmds2)
-    print(len1 + 1, len1)
-    for i in range(len1 + 1):
+    edges1, nodes1 = buildGraph(cmds1)
+    edges2, nodes2 = buildGraph(cmds2)
+    kernel = generateKernel(nodes1, nodes2)
+    print("\n")
+    print(len(nodes1), len(nodes1)-1)
+    for i in range(len(edges1)):
         for j in range(len(edges1[i])):
             print(i, edges1[i][j])
     print("\n")
-    print(len2 + 1, len2)
-    for i in range(len2 + 1):
+    print(len(nodes2), len(nodes2)-1)
+    for i in range(len(edges2)):
         for j in range(len(edges2[i])):
             print(i, edges2[i][j])
     print("\n")
     for line in kernel:
-        print(' '.join(line))
+        print(" ".join([str(num) for num in line]))
     
     # with open("layer_0.txt", 'r') as f:
     #     content = f.read()
