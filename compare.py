@@ -84,7 +84,7 @@ def compareSize(json1, json2):
             noRRect = json2 if json1["command"] == "DrawRRect" else json1
             size1 = abs(RRect["coords"][0][0] - RRect["coords"][0][2]) * abs(RRect["coords"][0][1] - RRect["coords"][0][3]) + abs(RRect["coords"][1][0]*2*RRect["coords"][1][0]*2 - pi*RRect["coords"][1][0]*RRect["coords"][1][0])
             position2 = noRRect["shortDesc"].strip(' []').split(" ")
-            size2 = abs(float(noRRect[0]) - float(noRRect[2]))*abs(float(noRRect[1]) - float(noRRect[3]))
+            size2 = abs(float(position2[0]) - float(position2[2]))*abs(float(position2[1]) - float(position2[3]))
             return min(size1,size2)/max(size1,size2)
         else:
             position1 = json1["shortDesc"].strip(' []').split(" ")
