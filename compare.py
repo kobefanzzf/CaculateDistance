@@ -39,7 +39,7 @@ def getPathLen(json1):
         elif "line" in json1["path"]["verbs"][i]:
             points.append(json1["path"]["verbs"][i]["line"])
         else:
-            continue;
+            continue
     for i in range(len(points) - 1):
         dx = points[i][0] - points[i+1][0]
         dy = points[i][1] - points[i+1][1]
@@ -54,7 +54,7 @@ def getPathPosition(json1):
         elif "line" in json1["path"]["verbs"][i]:
             points.append(json1["path"]["verbs"][i]["line"])
         else:
-            continue;
+            continue
     return points
 
 
