@@ -1,4 +1,10 @@
-#include<bits/stdc++.h>
+//#include<bits/stdc++.h>
+#include <cstdio>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cstring>
+#include <string>
 using namespace std;
 /*
 输入按巨大邻接表和巨大权值矩阵给出 
