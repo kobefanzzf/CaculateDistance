@@ -133,7 +133,15 @@ def comparePosition(json1, json2):
         sim = 1 - sqrt((path_x - nonpath_x)*(path_x - nonpath_x)+(path_y - nonpath_y)*(path_y - nonpath_y))/sqrt(path_x*path_x + path_y*path_y)
         return sim
     else:
-        if shape[0] == "DrawRRect" or shape[1] == "DrawRRect":
+        if shape[0] == "DrawRRect" and shape[1] == "DrawRRect":
+            RRect_x = (json1["coords"][0][0] + json1["coords"][0][2])/2
+            RRect_y = (json1["coords"][0][1] + json1["coords"][0][3])/2
+            nonRRect_x = (json2["coords"][0][0] + json2["coords"][0][2])/2
+            nonRRect_y = (json2["coords"][0][1] + json2["coords"][0][3])/2
+            sim = 1 - sqrt((RRect_x - nonRRect_x)*(RRect_x - nonRRect_x)+(RRect_y - nonRRect_y)*(RRect_y - nonRRect_y))/sqrt(RRect_x*RRect_x + RRect_y*RRect_y)
+            return sim
+
+        elif shape[0] == "DrawRRect" or shape[1] == "DrawRRect":
             RRect = json1 if json1["command"] == "DrawRRect" else json2
             nonRRect = json2 if json1["command"] == "DrawRRect" else json1
             RRect_x = (RRect["coords"][0][0] + RRect["coords"][0][2])/2

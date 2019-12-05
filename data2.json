@@ -1,12 +1,1 @@
-{
-   "command": "DrawRRect",
-   "visible": true,
-   "coords": [ [ 161.5, 1317.5, 230.5, 1346.5 ], [ 2.5, 2.5 ], [ 2.5, 2.5 ], [ 2.5, 2.5 ], [ 2.5, 2.5 ] ],
-   "paint": {
-      "strokeWidth": 1,
-      "antiAlias": true,
-      "color": [ 255, 229, 229, 229 ],
-      "style": "stroke",
-      "filterQuality": "low"
-   }
-}
+{"command": "DrawRRect", "visible": true, "coords": [[584, 285, 704, 321], [2, 2], [2, 2], [2, 2], [2, 2]], "paint": {"antiAlias": true, "color": [255, 6, 95, 212], "filterQuality": "low"}}
