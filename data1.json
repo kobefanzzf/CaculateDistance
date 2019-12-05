@@ -1,0 +1,30 @@
+{
+   "command": "DrawPath",
+   "visible": true,
+   "path": {
+      "fillType": "winding",
+      "verbs": [
+         {
+            "move": [ 65, 1491 ]
+         },
+         {
+            "line": [ 721, 1491 ]
+         },
+         {
+            "line": [ 721, 1495 ]
+         },
+         {
+            "line": [ 65, 1495 ]
+         },
+         {
+            "line": [ 65, 1491 ]
+         },
+         "close"
+      ]
+   },
+   "paint": {
+      "antiAlias": true,
+      "color": [ 26, 0, 0, 0 ],
+      "filterQuality": "low"
+   }
+}

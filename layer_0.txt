@@ -1,0 +1,217 @@
+{
+   "version": 1,
+   "commands": [
+      {
+         "command": "DrawPaint",
+         "visible": true,
+         "paint": {
+            "color": [ 0, 0, 0, 0 ],
+            "blendMode": "src"
+         }
+      },
+      {
+         "command": "DrawRect",
+         "visible": true,
+         "coords": [ 0, 0, 800, 600 ],
+         "paint": {
+            "antiAlias": true,
+            "color": [ 255, 255, 255, 255 ],
+            "blendMode": "src",
+            "filterQuality": "low"
+         },
+         "shortDesc": " [0 0 800 600]"
+      },
+      {
+         "command": "DrawRect",
+         "visible": true,
+         "coords": [ 10, 10, 150, 500 ],
+         "paint": {
+            "antiAlias": true,
+            "color": [ 255, 0, 128, 0 ],
+            "filterQuality": "low"
+         },
+         "shortDesc": " [10 10 150 500]"
+      },
+      {
+         "command": "DrawImageRect",
+         "visible": true,
+         "image": {
+            "data": "data/2"
+         },
+         "src": [ 209, 0, 851, 175 ],
+         "dst": [ 400, 100, 680, 400],
+         "paint": {
+            "antiAlias": true,
+            "filterQuality": "medium"
+         },
+         "strict": true,
+         "shortDesc": " [400 100 680 400]"
+      },
+      {
+         "command": "DrawRRect",
+         "visible": true,
+         "coords": [ [ 64, 120, 130, 300 ], [ 2, 2 ], [ 2, 2 ], [ 2, 2 ], [ 2, 2 ] ],
+         "paint": {
+            "antiAlias": true,
+            "color": [ 255, 230, 188, 39 ],
+            "filterQuality": "low"
+         }
+      },
+      {
+         "command": "DrawTextBlob",
+         "visible": true,
+         "runs": [
+            {
+               "glyphs": [
+                  56,
+                  86,
+                  73,
+                  82,
+                  72,
+                  77,
+                  82,
+                  75
+               ],
+               "positions": [
+                  0,
+                  11,
+                  18,
+                  29,
+                  40,
+                  51,
+                  56,
+                  67
+               ],
+               "font": {
+                  "embeddedBitmapText": true,
+                  "textSize": 20,
+                  "edging": "antialias",
+                  "hinting": "full",
+                  "typeface": {
+                     "data": "data/1"
+                  }
+               },
+               "coords": [ 0, 0 ]
+            }
+         ],
+         "x": 72.5,
+         "y": 1122,
+         "coords": [ -14.6484, -21.123, 90.3984, 5.41992 ],
+         "paint": {
+            "antiAlias": true,
+            "color": [ 255, 13, 13, 13 ],
+            "filterQuality": "low"
+         },
+         "shortDesc": " [257.8516 500.88 462.898 527.42]"
+      },{
+         "command": "DrawPath",
+         "visible": true,
+         "path": {
+            "fillType": "winding",
+            "verbs": [
+               {
+                  "move": [ 12, 8 ]
+               },
+               {
+                  "cubic": [
+                     [ 13.1, 8 ],
+                     [ 14, 7.1 ],
+                     [ 14, 6 ]
+                  ]
+               },
+               {
+                  "cubic": [
+                     [ 14, 4.9 ],
+                     [ 13.1, 4 ],
+                     [ 12, 4 ]
+                  ]
+               },
+               {
+                  "cubic": [
+                     [ 10.9, 4 ],
+                     [ 10, 4.9 ],
+                     [ 10, 6 ]
+                  ]
+               },
+               {
+                  "cubic": [
+                     [ 10, 7.1 ],
+                     [ 10.9, 8 ],
+                     [ 12, 8 ]
+                  ]
+               },
+               "close",
+               {
+                  "move": [ 12, 10 ]
+               },
+               {
+                  "cubic": [
+                     [ 10.9, 10 ],
+                     [ 10, 10.9 ],
+                     [ 10, 12 ]
+                  ]
+               },
+               {
+                  "cubic": [
+                     [ 10, 13.1 ],
+                     [ 10.9, 14 ],
+                     [ 12, 14 ]
+                  ]
+               },
+               {
+                  "cubic": [
+                     [ 13.1, 14 ],
+                     [ 14, 13.1 ],
+                     [ 14, 12 ]
+                  ]
+               },
+               {
+                  "cubic": [
+                     [ 14, 10.9 ],
+                     [ 13.1, 10 ],
+                     [ 12, 10 ]
+                  ]
+               },
+               "close",
+               {
+                  "move": [ 12, 16 ]
+               },
+               {
+                  "cubic": [
+                     [ 10.9, 16 ],
+                     [ 10, 16.9 ],
+                     [ 10, 18 ]
+                  ]
+               },
+               {
+                  "cubic": [
+                     [ 10, 19.1 ],
+                     [ 10.9, 20 ],
+                     [ 12, 20 ]
+                  ]
+               },
+               {
+                  "cubic": [
+                     [ 13.1, 20 ],
+                     [ 14, 19.1 ],
+                     [ 14, 18 ]
+                  ]
+               },
+               {
+                  "cubic": [
+                     [ 14, 16.9 ],
+                     [ 13.1, 16 ],
+                     [ 12, 16 ]
+                  ]
+               },
+               "close"
+            ]
+         },
+         "paint": {
+            "antiAlias": true,
+            "color": [ 255, 144, 144, 144 ],
+            "filterQuality": "low"
+         }
+      }
+   ]
+}
