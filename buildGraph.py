@@ -94,14 +94,14 @@ def generateKernel(cmds1, cmds2):
     for obj1 in cmds1[1:]:
         line = [0]
         for obj2 in cmds2[1:]:
-            val = nodeComparison(obj1, obj2)
-            if val > 1:
-                f.write("value is " + str(val) + " ")
-                f.write("\n")
+            try:
+                val = nodeComparison(obj1, obj2)
+            except Exception as e:
                 f.write(json.dumps(obj1))
                 f.write('\n')
                 f.write(json.dumps(obj2))
-                f.write('\n')
+                f.write("\n")
+                f.write(str(e))
                 f.write('\n')
             line.append(val)
         kernel.append(line)
