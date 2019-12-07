@@ -72,7 +72,7 @@ double KM(){
     return res;
 }
 double calc(int root1,int root2){
-	printf("%d %d\n",root1,root2);
+//	printf("%d %d\n",root1,root2);
 	vector<int>floor1;
 	vector<int>floor2;
 	if(root1!=-1)for(int i=0;i<E1[root1].size();i++)floor1.push_back(E1[root1][i]);
