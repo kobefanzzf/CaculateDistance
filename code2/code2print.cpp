@@ -106,7 +106,7 @@ double calc(int root1,int root2,int dep){
 	nmsg+=n;
 	for(int i=0;i<n;i++)msg[rootmsg].push_back({rootmsg+i+1,res[i],dep});
 	for(int i=0;i<n;i++){
-		printf("%d %d %f\n",root1,i>=floor1.size()?-1:floor1[i],res[i]);
+		printf("%d %d %f\n",root1,i>=floor1.size()?-1:floor1[i],abs(res[i]));
 //		printf("%d %d %d %f\n",dep,root1,i>-floor1.size()?-1:floor1[i],res[i]);
 	}
 	for(int i=0;i<n;i++){
