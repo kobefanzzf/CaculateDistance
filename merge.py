@@ -29,7 +29,7 @@ def merge(dirPath):
     f.write(json.dumps(jsonObjs, indent=2))
     f.close()
 
-def combineTextBlob(dirPath):
+def combineTextBlob(dirPath, txtPath):
     filePath = dirPath + "all.txt"
     f = open(filePath, 'r')
     jsonObj = json.loads(f.read())
@@ -62,17 +62,16 @@ def combineTextBlob(dirPath):
             else:
                 combineList.append(cmd)
     jsonObj["commands"] = combineList
-    f = open(dirPath + "merge.txt", 'w')
+    f = open(txtPath, 'w')
     f.write(json.dumps(jsonObj, indent=2))
     f.close()
 
 
 
 
-        
-
 
 if __name__ == "__main__":
     dirPath = sys.argv[1]
+    txtPath = sys.argv[2]
     merge(dirPath)
-    combineTextBlob(dirPath)
+    combineTextBlob(dirPath, txtPath)
