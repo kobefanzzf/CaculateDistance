@@ -7,7 +7,9 @@ outDir = sys.argv[2]
 if __name__ == "__main__":
     dirs = os.listdir(dirsPath)
     for dir in dirs:
-        dirPath = dirsPath + dir
-        outfile = dir + '.txt'
+        dirPath = dirsPath + dir + '/'
+        print(dir)
+        outfile = outDir + dir + '.txt'
         command = "python merge.py " + dirPath + " " + outfile
+        print(command)
         os.system(command)

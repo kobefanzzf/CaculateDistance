@@ -21,6 +21,7 @@ def merge(dirPath):
 
     for i in range(1, len(files)):
         filePath = dirPath + "jsonlayer_" + str(i) + ".skp.txt"
+        print(filePath)
         with open(filePath, 'r') as fread:
             commands = json.loads(fread.read())["commands"]
             jsonObjs["commands"] += commands
