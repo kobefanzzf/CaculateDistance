@@ -179,7 +179,7 @@ void printmsg(){
 //	cout<<res/alpha*(1-alpha)<<endl;
 }
 int main(){
-	freopen("a.txt","r",stdin);
+	freopen("1vs2.txt","r",stdin);
 //	freopen("b.txt","w",stdout);
 	int nedge,tu,tv;
 	cin>>N1>>nedge;
