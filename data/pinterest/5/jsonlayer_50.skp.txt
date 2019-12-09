@@ -1,0 +1,54 @@
+{
+   "version": 1,
+   "commands": [
+      {
+         "command": "DrawPaint",
+         "visible": true,
+         "paint": {
+            "color": [ 0, 0, 0, 0 ],
+            "blendMode": "src"
+         }
+      },
+      {
+         "command": "Save",
+         "visible": true
+      },
+      {
+         "command": "ClipRRect",
+         "visible": true,
+         "coords": [ [ 0, 0, 236, 298 ], [ 8, 8 ], [ 8, 8 ], [ 8, 8 ], [ 8, 8 ] ],
+         "op": "intersect",
+         "antiAlias": true
+      },
+      {
+         "command": "DrawImageRect",
+         "visible": true,
+         "image": {
+            "data": "data/0"
+         },
+         "src": [ 0, 0, 235, 298 ],
+         "dst": [ 0, 0, 236, 299 ],
+         "paint": {
+            "antiAlias": true,
+            "filterQuality": "medium"
+         },
+         "strict": true,
+         "shortDesc": " [0 0 236 299]"
+      },
+      {
+         "command": "DrawRect",
+         "visible": true,
+         "coords": [ 0, 0, 236, 298 ],
+         "paint": {
+            "antiAlias": true,
+            "color": [ 8, 0, 0, 0 ],
+            "filterQuality": "low"
+         },
+         "shortDesc": " [0 0 236 298]"
+      },
+      {
+         "command": "Restore",
+         "visible": true
+      }
+   ]
+}

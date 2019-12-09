@@ -1,0 +1,205 @@
+{
+   "version": 1,
+   "commands": [
+      {
+         "command": "DrawPaint",
+         "visible": true,
+         "paint": {
+            "color": [ 0, 0, 0, 0 ],
+            "blendMode": "src"
+         }
+      },
+      {
+         "command": "Save",
+         "visible": true
+      },
+      {
+         "command": "Concat",
+         "visible": true,
+         "matrix": [
+            [ 1, 0, -770 ],
+            [ 0, 1, -0 ],
+            [ 0, 0, 1 ]
+         ]
+      },
+      {
+         "command": "Save",
+         "visible": true
+      },
+      {
+         "command": "ClipRect",
+         "visible": true,
+         "coords": [ 770, 0, 785, 15 ],
+         "op": "intersect",
+         "antiAlias": false,
+         "shortDesc": " [770 0 785 15]"
+      },
+      {
+         "command": "DrawRect",
+         "visible": true,
+         "coords": [ 770, 0, 785, 15 ],
+         "paint": {
+            "color": [ 255, 241, 241, 241 ]
+         },
+         "shortDesc": " [770 0 785 15]"
+      },
+      {
+         "command": "DrawPath",
+         "visible": true,
+         "path": {
+            "fillType": "winding",
+            "verbs": [
+               {
+                  "move": [ 774, 10 ]
+               },
+               {
+                  "line": [ 781, 10 ]
+               },
+               {
+                  "line": [ 777.5, 6 ]
+               },
+               {
+                  "line": [ 774, 10 ]
+               },
+               "close"
+            ]
+         },
+         "paint": {
+            "color": [ 255, 163, 163, 163 ]
+         }
+      },
+      {
+         "command": "Restore",
+         "visible": true
+      },
+      {
+         "command": "Save",
+         "visible": true
+      },
+      {
+         "command": "ClipRect",
+         "visible": true,
+         "coords": [ 770, 585, 785, 600 ],
+         "op": "intersect",
+         "antiAlias": false,
+         "shortDesc": " [770 585 785 600]"
+      },
+      {
+         "command": "DrawRect",
+         "visible": true,
+         "coords": [ 770, 585, 785, 600 ],
+         "paint": {
+            "color": [ 255, 241, 241, 241 ]
+         },
+         "shortDesc": " [770 585 785 600]"
+      },
+      {
+         "command": "DrawPath",
+         "visible": true,
+         "path": {
+            "fillType": "winding",
+            "verbs": [
+               {
+                  "move": [ 774, 590 ]
+               },
+               {
+                  "line": [ 781, 590 ]
+               },
+               {
+                  "line": [ 777.5, 594 ]
+               },
+               {
+                  "line": [ 774, 590 ]
+               },
+               "close"
+            ]
+         },
+         "paint": {
+            "color": [ 255, 80, 80, 80 ]
+         }
+      },
+      {
+         "command": "Restore",
+         "visible": true
+      },
+      {
+         "command": "Save",
+         "visible": true
+      },
+      {
+         "command": "ClipRect",
+         "visible": true,
+         "coords": [ 770, 15, 785, 263 ],
+         "op": "intersect",
+         "antiAlias": false,
+         "shortDesc": " [770 15 785 263]"
+      },
+      {
+         "command": "DrawRect",
+         "visible": true,
+         "coords": [ 770, 15, 785, 263 ],
+         "paint": {
+            "color": [ 255, 241, 241, 241 ]
+         },
+         "shortDesc": " [770 15 785 263]"
+      },
+      {
+         "command": "Restore",
+         "visible": true
+      },
+      {
+         "command": "Save",
+         "visible": true
+      },
+      {
+         "command": "ClipRect",
+         "visible": true,
+         "coords": [ 770, 263, 785, 585 ],
+         "op": "intersect",
+         "antiAlias": false,
+         "shortDesc": " [770 263 785 585]"
+      },
+      {
+         "command": "DrawRect",
+         "visible": true,
+         "coords": [ 770, 263, 785, 585 ],
+         "paint": {
+            "color": [ 255, 241, 241, 241 ]
+         },
+         "shortDesc": " [770 263 785 585]"
+      },
+      {
+         "command": "Restore",
+         "visible": true
+      },
+      {
+         "command": "Save",
+         "visible": true
+      },
+      {
+         "command": "ClipRect",
+         "visible": true,
+         "coords": [ 770, 15, 785, 511 ],
+         "op": "intersect",
+         "antiAlias": false,
+         "shortDesc": " [770 15 785 511]"
+      },
+      {
+         "command": "DrawRect",
+         "visible": true,
+         "coords": [ 772, 15, 783, 511 ],
+         "paint": {
+            "color": [ 51, 0, 0, 0 ]
+         },
+         "shortDesc": " [772 15 783 511]"
+      },
+      {
+         "command": "Restore",
+         "visible": true
+      },
+      {
+         "command": "Restore",
+         "visible": true
+      }
+   ]
+}

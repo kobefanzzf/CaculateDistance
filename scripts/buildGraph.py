@@ -113,12 +113,12 @@ def generateKernel(cmds1, cmds2):
     
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 4:
         print("format error!")
         exit(0)
     filename1 = sys.argv[1]
     filename2 = sys.argv[2]
-    outfile = "output.txt"
+    outfile = sys.argv[3]
     f = open(outfile, 'w')
     f1 = open(filename1, 'r')
     f2 = open(filename2, 'r')

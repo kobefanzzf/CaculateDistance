@@ -1,0 +1,25 @@
+{
+   "version": 1,
+   "commands": [
+      {
+         "command": "DrawPaint",
+         "visible": true,
+         "paint": {
+            "color": [ 0, 0, 0, 0 ],
+            "blendMode": "src"
+         }
+      },
+      {
+         "command": "DrawRect",
+         "visible": true,
+         "coords": [ 0, 0, 785, 600 ],
+         "paint": {
+            "antiAlias": true,
+            "color": [ 255, 255, 255, 255 ],
+            "blendMode": "src",
+            "filterQuality": "low"
+         },
+         "shortDesc": " [0 0 785 600]"
+      }
+   ]
+}
