@@ -11,8 +11,9 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args": [
-                "/Users/zzf/Downloads/skia_data/youtube_com/jsonlayer_0.skp.txt",
-                "/Users/zzf/Downloads/skia_data/youtube_com/jsonlayer_0.skp.txt"
+                "/Users/zzf/Python-Project/skia/data/pinterest/merge/1.txt",
+                "/Users/zzf/Python-Project/skia/data/pinterest/merge/2.txt",
+                "/Users/zzf/Python-Project/skia/tmp.txt"
             ]
         }
     ]

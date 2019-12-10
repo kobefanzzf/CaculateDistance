@@ -22,13 +22,13 @@ def buildGraph(commmands):
     root = {
         "command": "DrawRect",
         "visible": True,
-        "coords": [ 0, 0, 10000, 10000 ],
+        "coords": [ -10000, -10000, 10000, 10000 ],
         "paint": {
         "antiAlias": True,
         "color": [ 255, 153, 153, 153 ],
         "filterQuality": "low"
         },
-        "shortDesc": " [0 0 10000 10000]"
+        "shortDesc": " [-10000 -10000 10000 10000]"
     }
     nodes.append(root)
     for command in commmands:
@@ -82,8 +82,7 @@ def buildGraph(commmands):
                     minj = j
 
         if minj != -1:
-            edges[minj].append(i)
-        
+            edges[minj].append(i)    
 
     return edges, nodes
 
